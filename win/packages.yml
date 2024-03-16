@@ -1,0 +1,73 @@
+winget:
+    pkgs:
+        - name: SomePythonThings.WingetUIStore
+        - name: Microsoft.PowerToys
+        - name: File-New-Project.EarTrumpet
+        - name: Cryptomator.Cryptomator
+        - name: AdrienAllard.FileConverter
+        - name: CPUID.CPU-Z
+        - name: TechPowerUp.GPU-Z
+        - name: Notion.Notion
+        - name: Discord.Discord
+        - name: WhatsApp.WhatsApp
+        - name: Telegram.TelegramDesktop
+        - name: Spotify.Spotify
+        - name: Brave.Brave
+        - name: Fork.Fork
+        - name: Microsoft.VisualStudioCode
+        - name: JetBrains.Rider
+        - name: Docker.DockerDesktop
+        - name: Unity.UnityHub
+        - name: BlenderFoundation.Blender
+        - name: GIMP.GIMP
+        - name: Inkscape.Inkscape
+        - name: KDE.Krita
+        - name: BaldurKarlsson.RenderDoc
+        - name: Google.Drive
+        - name: VideoLAN.VLC
+        - name: Valve.Steam
+        - name: EpicGames.EpicGamesLauncher
+        - name: GOG.Galaxy
+        - name: ItchIo.Itch
+        - name: OBSProject.OBSStudio
+choco:
+    pkgs:
+        - name: protondrive
+        - name: protonvpn
+scoop:
+    buckets:
+        - main
+        - extras
+        - java
+        - nerd-fonts
+    pkgs:
+        - name: gsudo
+        - name: rustup
+        - name: node
+        - name: nvm
+        - name: python
+        - name: openjdk
+        - name: git
+          features: ["install-context.reg"]
+        - name: 7zip
+          features: ["install-context.reg"]
+        - name: neofetch
+        - name: zoxide
+        - name: fzf
+        - name: bat
+        - name: dust
+        - name: bottom
+        - name: starship
+        - name: komorebi
+        - name: autohotkey
+        - name: whkd
+        - name: godot
+        - name: JetBrains-Mono
+        - name: JetBrainsMono-NF
+# downloads:
+#     pkgs:
+#         - name: Voicemeter Banana
+#           url: https://www.vb-audio.com/Voicemeeter/banana.htm
+#           zip: true
+#           path: voicemeterprosetup.exe
+#           args: /silent
