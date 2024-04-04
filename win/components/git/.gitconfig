@@ -2,12 +2,14 @@
     defaultBranch = master
 
 [core]
-	editor = \"C:\\Users\\mrbandler\\AppData\\Local\\Programs\\Microsoft VS Code\\bin\\code\" --wait
+	editor = code --wait
+
+[user]
+    name = mrbandler
+    email = me@mrbandler.dev
+
 [filter "lfs"]
-	required = true
 	clean = git-lfs clean -- %f
 	smudge = git-lfs smudge -- %f
 	process = git-lfs filter-process
-[user]
-	name = mrbandler
-	email = me@mrbandler.dev
+	required = true
