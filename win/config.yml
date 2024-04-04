@@ -1,0 +1,116 @@
+packages:
+    uninstall:
+        appx:
+            pkgs:
+                - name: "*QuickAssist*"
+                - name: "*Copilot*"
+    install:
+        winget:
+            pkgs:
+                - name: SomePythonThings.WingetUIStore
+                - name: Microsoft.PowerToys
+                - name: File-New-Project.EarTrumpet
+                - name: Cryptomator.Cryptomator
+                - name: AdrienAllard.FileConverter
+                - name: CPUID.CPU-Z
+                - name: TechPowerUp.GPU-Z
+                - name: Notion.Notion
+                - name: Discord.Discord
+                - name: WhatsApp.WhatsApp
+                - name: Telegram.TelegramDesktop
+                - name: Spotify.Spotify
+                - name: Brave.Brave
+                - name: Fork.Fork
+                - name: Microsoft.VisualStudioCode
+                - name: JetBrains.Rider
+                - name: Docker.DockerDesktop
+                - name: Unity.UnityHub
+                - name: BlenderFoundation.Blender
+                - name: GIMP.GIMP
+                - name: Inkscape.Inkscape
+                - name: KDE.Krita
+                - name: BaldurKarlsson.RenderDoc
+                - name: Google.Drive
+                - name: VideoLAN.VLC
+                - name: Valve.Steam
+                - name: EpicGames.EpicGamesLauncher
+                - name: GOG.Galaxy
+                - name: ItchIo.Itch
+                - name: OBSProject.OBSStudio
+        choco:
+            pkgs:
+                - name: protondrive
+                - name: protonvpn
+        scoop:
+            buckets:
+                - main
+                - extras
+                - java
+                - nerd-fonts
+            pkgs:
+                - name: gsudo
+                - name: rustup
+                - name: node
+                - name: nvm
+                - name: python
+                - name: openjdk
+                - name: git
+                  features: ["install-context.reg"]
+                - name: 7zip
+                  features: ["install-context.reg"]
+                - name: neofetch
+                - name: zoxide
+                - name: fzf
+                - name: bat
+                - name: dust
+                - name: bottom
+                - name: starship
+                - name: komorebi
+                - name: autohotkey
+                - name: whkd
+                - name: godot
+                - name: JetBrains-Mono
+                - name: JetBrainsMono-NF
+        # downloads:
+        #     pkgs:
+        #         - name: Voicemeter Banana
+        #           url: https://www.vb-audio.com/Voicemeeter/banana.htm
+        #           zip: true
+        #           path: voicemeterprosetup.exe
+        #           args: /silent
+
+settings:
+    registry:
+        - desc: Center Taskbar
+          path: HKCU:\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced
+          name: TaskbarAl
+          type: DWORD
+          value: 1
+        - desc: Disable Widgets
+          path: HKCU:\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced
+          name: TaskbarDa
+          type: DWORD
+          value: 0
+        - desc: Disable Task View
+          path: HKCU:\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced
+          name: ShowTaskViewButton
+          type: DWORD
+          value: 0
+        - desc: Disable Search
+          path: HKCU:\Software\Microsoft\Windows\CurrentVersion\Search
+          name: SearchboxTaskbarMode
+          type: DWORD
+          value: 0
+        - desc: Disable News and Interests
+          path: HKCU:\Software\Microsoft\Windows\CurrentVersion\Feeds
+          name: ShellFeedsTaskbarViewMode
+          type: DWORD
+          value: 2
+    network:
+        dns:
+            primary:
+                v4: 1.1.1.1
+                v6: 2606:4700:4700::1111
+            secondary:
+                v4: 1.0.0.1
+                v6: 2606:4700:4700::1001
