@@ -1,8 +1,8 @@
 # Define variables
 $zipUrl = "https://github.com/mrbandler/.dotfiles/archive/refs/heads/master.zip"
 $tempDir = "$HOME\.dotfiles-temp"
-$dotfilesDir = "$HOME\.dotfiles2"
-$zipPath = "$HOME\dotfiles2.zip"
+$dotfilesDir = "$HOME\.dotfiles"
+$zipPath = "$HOME\dotfiles.zip"
 
 New-Item -ItemType Directory -Force -Path $dotfilesDir
 Invoke-RestMethod -Uri $zipUrl -OutFile $zipPath
@@ -15,7 +15,7 @@ Remove-Item -Path $zipPath -Force
 Remove-Item -Path $tempDir -Recurse -Force
 
 Set-Location -Path $dotfilesDir
-# & ".\win\bootstrap.ps1"
+& ".\win\bootstrap.ps1"
 
 git init
 git switch -c temp
