@@ -22,7 +22,7 @@ if (Get-Command scoop -ErrorAction SilentlyContinue) {
 }
 else {
     Write-Host "Installing Scoop..."
-    Invoke-Expression (New-Object System.Net.WebClient).DownloadString('https://get.scoop.sh')
+    iex "& {$(irm get.scoop.sh)} -RunAsAdmin"
     # Add Scoop to PATH
     $env:Path += ";$env:USERPROFILE\scoop\shims"
 }
