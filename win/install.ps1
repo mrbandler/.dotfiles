@@ -26,6 +26,7 @@ Remove-Item -Path $zipPath -Force
 Remove-Item -Path $tempDir -Recurse -Force
 
 Set-Location -Path $dotfilesDir
+Set-ExecutionPolicy Bypass -Scope Process -Force
 & ".\win\bootstrap.ps1"
 
 git init
