@@ -1,0 +1,1 @@
+Write-Host "I will setup your WSL instances!"
