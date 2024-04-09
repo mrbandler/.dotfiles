@@ -1,5 +1,4 @@
 # Check if the script is running as an administrator
-# Check if the script is running as an administrator
 if (-NOT ([Security.Principal.WindowsPrincipal][Security.Principal.WindowsIdentity]::GetCurrent()).IsInRole([Security.Principal.WindowsBuiltInRole] "Administrator")) {
     # Reconstruct the script path and arguments if any
     $scriptPath = $MyInvocation.MyCommand.Definition
