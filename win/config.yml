@@ -4,12 +4,12 @@ modules:
     install: "Install-Script winget-install -Force"
   - name: Terminal-Icons
 features:
-  - NetFx3
-  - NetFx4-AdvSrvs
-  - Microsoft-Hyper-V
-  - Containers
-  - VirtualMachinePlatform
-  - Microsoft-Windows-Subsystem-Linux
+  - name: NetFx3
+  - name: NetFx4-AdvSrvs
+  - name: Microsoft-Hyper-V
+  - name: Containers
+  - name: VirtualMachinePlatform
+  - name: Microsoft-Windows-Subsystem-Linux
 packages:
     uninstall:
         appx:

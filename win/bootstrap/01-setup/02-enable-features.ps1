@@ -6,6 +6,6 @@ $features = $config.features
 
 Write-Host "Enabling features..."
 foreach ($feature in $features) {
-    Write-Host "Enabling '$feature' feature..."
-    Enable-WindowsOptionalFeature -Online -FeatureName $feature -All -NoRestart
+    Write-Host "Enabling '$($feature.name)' feature..."
+    Enable-WindowsOptionalFeature -Online -FeatureName $feature.name -All -NoRestart
 }

@@ -1,6 +1,6 @@
 Write-Host "Configuring repos..."
-Install-PackageProvider -Name "NuGet" -Force
-Set-PSRepository -Name "PSGallery" -InstallationPolicy Trusted
+Install-PackageProvider -Name "NuGet" -Force | Out-Null
+Set-PSRepository -Name "PSGallery" -InstallationPolicy Trusted | Out-Null
 
 Write-Host "Installing YAML module to read configuration..."
 Install-Module -Name "powershell-yaml" -Scope CurrentUser -SkipPublisherCheck
@@ -14,7 +14,7 @@ $modules = $config.modules
 Write-Host "Installing modules..."
 foreach ($module in $modules) {
     if (-not (Get-Module -ListAvailable -Name $module)) {
-        Write-Host "Installing module '$($modulen.name)'"
+        Write-Host "Installing '$($module.name)' module..."
         Install-Module -Name $module.name -Scope CurrentUser -SkipPublisherCheck
         if ($module.install) {
             Invoke-Expression $module.install
