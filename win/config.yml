@@ -1,3 +1,15 @@
+modules:
+  - name: PSDotFiles
+  - name: winget-install
+    install: "Install-Script winget-install -Force"
+  - name: Terminal-Icons
+features:
+  - NetFx3
+  - NetFx4-AdvSrvs
+  - Microsoft-Hyper-V
+  - Containers
+  - VirtualMachinePlatform
+  - Microsoft-Windows-Subsystem-Linux
 packages:
     uninstall:
         appx:
