@@ -4,12 +4,12 @@
 
 ## 🪟 Window Install
 
-```console
+```pwsh
 iwr -useb https://mrbandler.dev/win/install | iex
 ```
 
 ## ❄️ Nix Install
 
-```console
-TODO!
+```bash
+> TODO!
 ```
