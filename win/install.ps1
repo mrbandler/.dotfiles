@@ -1,3 +1,14 @@
+# Check if the script is running as an administrator
+if (-NOT ([Security.Principal.WindowsPrincipal][Security.Principal.WindowsIdentity]::GetCurrent()).IsInRole([Security.Principal.WindowsBuiltInRole] "Administrator")) {
+    # Reconstruct the script path and arguments if any
+    $scriptPath = $MyInvocation.MyCommand.Definition
+    $arguments = "-NoProfile -ExecutionPolicy Bypass -File `"$scriptPath`""
+
+    # Relaunch the script with administrator rights
+    Start-Process PowerShell.exe -ArgumentList $arguments -Verb RunAs
+    exit
+}
+
 # Define variables
 $zipUrl = "https://github.com/mrbandler/.dotfiles/archive/refs/heads/master.zip"
 $tempDir = "$HOME\.dotfiles-temp"
@@ -15,7 +26,6 @@ Remove-Item -Path $zipPath -Force
 Remove-Item -Path $tempDir -Recurse -Force
 
 Set-Location -Path $dotfilesDir
-Set-ExecutionPolicy Unrestricted -Scope CurrentUser -Force
 & ".\win\bootstrap.ps1"
 
 git init
