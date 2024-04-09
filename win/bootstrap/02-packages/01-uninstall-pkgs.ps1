@@ -1,3 +1,4 @@
+Write-Host "Reading configuration..."
 Import-Module powershell-yaml
 $configPath = Join-Path -Path $PSScriptRoot -ChildPath "../../config.yml"
 $config = Get-Content $configPath -Raw | ConvertFrom-Yaml
@@ -9,8 +10,8 @@ function Uninstall-AppXPackages {
     foreach ($pkg in $config.pkgs) {
         $foundPkg = Get-AppxPackage $($pkg.name)
         if ($foundPkg) {
-            Write-Host "Uninstalling AppX package: $($foundPkg.name)"
-            Remove-AppxPackage $foundPkg
+            Write-Host "Uninstalling $($foundPkg.name) AppX package..."
+            Remove-AppxPackage $foundPkg | Out-Null
         }
     }
 }

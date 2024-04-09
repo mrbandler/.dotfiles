@@ -15,9 +15,9 @@ Write-Host "Installing modules..."
 foreach ($module in $modules) {
     if (-not (Get-Module -ListAvailable -Name $module)) {
         Write-Host "Installing '$($module.name)' module..."
-        Install-Module -Name $module.name -Scope CurrentUser -SkipPublisherCheck
+        Install-Module -Name $module.name -Scope CurrentUser -SkipPublisherCheck | Out-Null
         if ($module.install) {
-            Invoke-Expression $module.install
+            Invoke-Expression $module.install | Out-Null
         }
     }
     else {
