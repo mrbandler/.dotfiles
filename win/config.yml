@@ -2,8 +2,22 @@ packages:
     uninstall:
         appx:
             pkgs:
-                - name: "*QuickAssist*"
-                - name: "*Copilot*"
+              - name: Clipchamp.Clipchamp
+              - name: Microsoft.WindowsFeebackHub
+              - name: Microsoft.WindowsMaps
+              - name: Microsoft.BingNews
+              - name: Microsoft.Todos
+              - name: Microsoft.MicrosoftOfficeHun
+              - name: Microsoft.OutlookForWindows
+              - name: Microsoft.People
+              - name: Microsoft.MicrosoftSolitairCollection
+              - name: Microsoft.MicrosoftStickyNotes
+              - name: Microsoft.WindowsSoundRecorder
+              - name: Microsoft.BingWeather
+              - name: Microsoft.ZuneVideo
+              - name: Microsoft.ZuneMusic
+              - name: Microsoft.ScreenSketch
+              - name: microsoft.windowscommunicationsapp
     install:
         winget:
             pkgs:
@@ -106,6 +120,11 @@ settings:
           name: ShellFeedsTaskbarViewMode
           type: DWORD
           value: 2
+        - desc: Enable Developer Mode
+          path: HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\AppModelUnlock
+          name: AllowDevelopmentWithoutDevLicense
+          type: DWORD
+          value: 1
     network:
         dns:
             primary:
