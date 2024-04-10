@@ -1,72 +1,108 @@
 modules:
-  - name: PSDotFiles
-  - name: winget-install
-    install: "Install-Script winget-install -Force"
-  - name: Terminal-Icons
+    - name: PSDotFiles
+    - name: winget-install
+      install: "Install-Script winget-install -Force"
+    - name: Terminal-Icons
 features:
-  - name: NetFx3
-  - name: NetFx4-AdvSrvs
-  - name: Microsoft-Hyper-V
-  - name: Containers
-  - name: VirtualMachinePlatform
-  - name: Microsoft-Windows-Subsystem-Linux
+    - name: NetFx3
+    - name: NetFx4-AdvSrvs
+    - name: Microsoft-Hyper-V
+    - name: Containers
+    - name: VirtualMachinePlatform
+    - name: Microsoft-Windows-Subsystem-Linux
 packages:
     uninstall:
         appx:
             pkgs:
-              - name: Clipchamp.Clipchamp
-              - name: Microsoft.WindowsFeebackHub
-              - name: Microsoft.WindowsMaps
-              - name: Microsoft.BingNews
-              - name: Microsoft.Todos
-              - name: Microsoft.MicrosoftOfficeHun
-              - name: Microsoft.OutlookForWindows
-              - name: Microsoft.People
-              - name: Microsoft.MicrosoftSolitairCollection
-              - name: Microsoft.MicrosoftStickyNotes
-              - name: Microsoft.WindowsSoundRecorder
-              - name: Microsoft.BingWeather
-              - name: Microsoft.ZuneVideo
-              - name: Microsoft.ZuneMusic
-              - name: Microsoft.ScreenSketch
-              - name: microsoft.windowscommunicationsapp
+                - name: Clipchamp.Clipchamp
+                - name: Microsoft.WindowsFeebackHub
+                - name: Microsoft.WindowsMaps
+                - name: Microsoft.BingNews
+                - name: Microsoft.Todos
+                - name: Microsoft.MicrosoftOfficeHun
+                - name: Microsoft.OutlookForWindows
+                - name: Microsoft.People
+                - name: Microsoft.MicrosoftSolitairCollection
+                - name: Microsoft.MicrosoftStickyNotes
+                - name: Microsoft.WindowsSoundRecorder
+                - name: Microsoft.BingWeather
+                - name: Microsoft.ZuneVideo
+                - name: Microsoft.ZuneMusic
+                - name: Microsoft.ScreenSketch
+                - name: microsoft.windowscommunicationsapp
     install:
         winget:
             pkgs:
-                - name: SomePythonThings.WingetUIStore
-                - name: Microsoft.PowerToys
-                - name: File-New-Project.EarTrumpet
-                - name: Cryptomator.Cryptomator
-                - name: AdrienAllard.FileConverter
-                - name: CPUID.CPU-Z
-                - name: TechPowerUp.GPU-Z
-                - name: Notion.Notion
-                - name: Discord.Discord
-                - name: WhatsApp.WhatsApp
-                - name: Telegram.TelegramDesktop
-                - name: Spotify.Spotify
-                - name: Brave.Brave
-                - name: Fork.Fork
-                - name: Microsoft.VisualStudioCode
-                - name: JetBrains.Rider
-                - name: Docker.DockerDesktop
-                - name: Unity.UnityHub
-                - name: BlenderFoundation.Blender
-                - name: GIMP.GIMP
-                - name: Inkscape.Inkscape
-                - name: KDE.Krita
-                - name: BaldurKarlsson.RenderDoc
-                - name: Google.Drive
-                - name: VideoLAN.VLC
-                - name: Valve.Steam
-                - name: EpicGames.EpicGamesLauncher
-                - name: GOG.Galaxy
-                - name: ItchIo.Itch
-                - name: OBSProject.OBSStudio
+                - name: Winget UI
+                  id: SomePythonThings.WingetUIStore
+                - name: PowerToys
+                  id: Microsoft.PowerToys
+                - name: Ear Trumpet
+                  id: File-New-Project.EarTrumpet
+                - name: Cryptomator
+                  id: Cryptomator.Cryptomator
+                - name: File Converter
+                  id: AdrienAllard.FileConverter
+                - name: Notion
+                  id: Notion.Notion
+                - name: Discord
+                  id: Discord.Discord
+                - name: WhatsApp
+                  id: 9NKSQGP7F2NH
+                - name: Telegram
+                  id: Telegram.TelegramDesktop
+                - name: Spotify
+                  id: Spotify.Spotify
+                - name: Brave
+                  id: Brave.Brave
+                - name: Fork
+                  id: Fork.Fork
+                - name: VS Code
+                  id: Microsoft.VisualStudioCode
+                - name: JetBrains Rider
+                  id: JetBrains.Rider
+                - name: Docker Desktop
+                  id: Docker.DockerDesktop
+                - name: Unity Hub
+                  id: Unity.UnityHub
+                - name: Blender
+                  id: BlenderFoundation.Blender
+                - name: Gimp
+                  id: GIMP.GIMP
+                - name: Inkscape
+                  id: Inkscape.Inkscape
+                - name: Krita
+                  id: KDE.Krita
+                - name: RenderDoc
+                  id: BaldurKarlsson.RenderDoc
+                - name: Google Drive
+                  id: Google.Drive
+                - name: VLC
+                  id: VideoLAN.VLC
+                - name: Stream
+                  id: Valve.Steam
+                - name: Epic Games Launcher
+                  id: EpicGames.EpicGamesLauncher
+                - name: GOG Galaxy
+                  id: GOG.Galaxy
+                - name: Itch Launcher
+                  id: ItchIo.Itch
+                - name: OBS Studio
+                  id: OBSProject.OBSStudio
+                - name: Grammarly
+                  id: Grammarly.Grammarly
+                - name: Ledger Live
+                  id: LedgerHQ.LedgerLive
+                - name: 1Password
+                  id: AgileBits.1Password
+                - name: Flameshot
+                  id: Flameshot.Flameshot
+                - name: Hey Mail
+                  id: 9PF08LJW7GW2
+                - name: ueli
+                  id: OliverSchwendener.ueli
         choco:
-            pkgs:
-                - name: protondrive
-                - name: protonvpn
+            pkgs: []
         scoop:
             buckets:
                 - main
@@ -75,13 +111,14 @@ packages:
                 - nerd-fonts
             pkgs:
                 - name: gsudo
+                - name: 1password-cli
                 - name: rustup
-                - name: node
                 - name: nvm
                 - name: python
                 - name: openjdk
                 - name: git
                   features: ["install-context.reg"]
+                - name: git-lfs
                 - name: 7zip
                   features: ["install-context.reg"]
                 - name: neofetch
@@ -92,18 +129,87 @@ packages:
                 - name: bottom
                 - name: starship
                 - name: komorebi
-                - name: autohotkey
                 - name: whkd
                 - name: godot
                 - name: JetBrains-Mono
                 - name: JetBrainsMono-NF
-        # downloads:
-        #     pkgs:
-        #         - name: Voicemeter Banana
-        #           url: https://www.vb-audio.com/Voicemeeter/banana.htm
-        #           zip: true
-        #           path: voicemeterprosetup.exe
-        #           args: /silent
+        downloads:
+            pkgs:
+                - if: "Get-WmiObject -Query 'SELECT * FROM Win32_VideoController' | Where-Object {$_.Name -like '*NVIDIA*'}"
+                  name: NVIDIA GeForce Experience
+                  url: https://de.download.nvidia.com/GFE/GFEClient/3.27.0.120/GeForce_Experience_v3.27.0.120.exe
+                  installer: GeForce_Experience_v3.27.0.120.exe
+                  args: /S
+
+                - name: Battle.net
+                  url: https://downloader.battle.net/download/getInstallerForGame?os=win&gameProgram=BATTLENET_APP&version=Live
+                  installer: Battle.net-Setup.exe
+                  args: /S
+
+                - name: Game Jolt Launcher
+                  url: https://download.gamejolt.net/51bab3a69c09f625a1c0db7c78648ba7d630a0e0590cffa6ced2788f49180320,1712871883,7/data/games/5/162/362412/files/65a1bff0bf66c/gamejoltclientsetup.exe
+                  installer: gamejoltclientsetup.exe
+                  args: /quiet
+
+                - name: NetLimiter
+                  url: https://download.netlimiter.com/nl/netlimiter-5.3.8.0.exe
+                  installer: netlimiter-5.3.8.0.exe
+                  args: /quiet
+
+                - name: Mudstack
+                  url: https://mudstack-desktop.s3.amazonaws.com/mudstack_windows_latest.exe
+                  installer: mudstack_windows_latest.exe
+                  args: /S
+
+                - name: Spacedrive
+                  url: https://www.spacedrive.com/api/releases/desktop/stable/windows/x86_64
+                  installer: Spacedrive-windows-x86_64.msi
+                  args: /qn /norestart
+
+                - name: UHK Agent
+                  url: https://github.com/UltimateHackingKeyboard/agent/releases/download/v4.0.2/UHK.Agent-4.0.2-win.exe
+                  installer: UHK.Agent-4.0.2-win.exe
+                  args: /S
+
+                - name: Notion Calendar
+                  url: https://www.notion.so/calendar/desktop/windows/download
+                  installer: NotionCalendar.exe
+
+                - if: "$env:COMPUTERNAME -ieq 'Zeus'"
+                  name: LG UltraGear Control Center
+                  url: https://gscs-b2c.lge.com/downloadFile?fileId=2DPPmX8OarXpELvvB8qMww
+                  zip: true
+                  artifact: LGUltraGearControlCenter.zip
+                  installer: LGUltraGearControlCenter_1.73.exe
+                  args: /S
+
+                - if: "$env:COMPUTERNAME -ieq 'Zeus'"
+                  name: LG OnScreen Control
+                  url: https://gscs-b2c.lge.com/downloadFile?fileId=2DPPmX8OarXpELvvB8qMww
+                  zip: true
+                  artifact: Win_OSC.zip
+                  installer: OSC_CLI_9.11.exe
+                  args: /S
+
+                - if: "$env:COMPUTERNAME -ieq 'Zeus'"
+                  name: Focusrite Control 2
+                  url: https://releases.focusrite.com/com.focusrite.focusrite-control/latest/Focusrite-Control-2.exe
+                  installer: Focusrite-Control-2.exe
+                  args: /S
+
+                - if: "$env:COMPUTERNAME -ieq 'Zeus'"
+                  name: Voicemeter Banana
+                  url: https://download.vb-audio.com/Download_CABLE/VoicemeeterSetup_v2111.zip
+                  zip: true
+                  artifact: VoicemeeterSetup_v2111.zip
+                  installer: voicemeeterprosetup.exe
+                  args: /S
+        local:
+            pkgs:
+                - if: "Get-WmiObject -Query 'SELECT * FROM Win32_VideoController' | Where-Object {$_.Name -like '*AMD*'}"
+                  name: AMD Adrenalin
+                  path: bin/amd-driver.exe
+                  args: /S
 
 settings:
     registry:
