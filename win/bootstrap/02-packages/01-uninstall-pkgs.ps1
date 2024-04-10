@@ -10,7 +10,7 @@ function Uninstall-AppXPackages {
     foreach ($pkg in $config.pkgs) {
         $foundPkg = Get-AppxPackage $($pkg.name)
         if ($foundPkg) {
-            Write-Host "Uninstalling $($foundPkg.name) AppX package..."
+            Write-Host "Uninstalling '$($foundPkg.name)' AppX package..."
             Remove-AppxPackage $foundPkg | Out-Null
         }
     }

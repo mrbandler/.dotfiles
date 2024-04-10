@@ -23,7 +23,7 @@ else {
 }
 
 # Install winget and change to Microsoft Store enabled region.
-Write-Host "Switching to Mircosoft Store enabled region (for winget)..."
+Write-Host "Switching to Mircosoft Store enabled region for winget installation..."
 Set-ItemProperty -Path "HKCU:\Control Panel\International\Geo" -Name "Name" -Value DE
 Set-ItemProperty -Path "HKCU:\Control Panel\International\Geo" -Name "Nation" -Value 94
 Write-Host "Installing winget..."
